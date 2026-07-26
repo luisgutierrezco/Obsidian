@@ -36,13 +36,13 @@ Conexión SSH: `sshpass -p "$RB5009_PASS" ssh -o StrictHostKeyChecking=no -p $RB
 
 ### VLANs (bridge-vip, vlan-filtering=yes)
 
-| VLAN | Subred | Interface | Notas |
-|------|--------|-----------|-------|
-| 10 (WIFI) | 192.168.88.0/24 | ether4 | WiFi clients |
-| 20 (SRV) | 192.168.91.0/24 | ether5 | Proxmox en .248 |
-| 30 (REDVIP1) | 192.168.89.0/24 | ether6 | |
-| 40 (REDVIP2) | 192.168.90.0/24 | ether7 | Tráfico alto |
-| 50 (CCTV) | 192.168.92.0/24 | ether8 | Cámaras |
+| VLAN         | Subred          | Interface | Notas           |
+| ------------ | --------------- | --------- | --------------- |
+| 10 (WIFI)    | 192.168.88.0/24 | ether4    | WiFi clients    |
+| 20 (SRV)     | 192.168.91.0/24 | ether5    | Proxmox en .248 |
+| 30 (REDVIP1) | 192.168.89.0/24 | ether6    |                 |
+| 40 (REDVIP2) | 192.168.90.0/24 | ether7    | Tráfico alto    |
+| 50 (CCTV)    | 192.168.92.0/24 | ether8    | Cámaras         |
 
 ## Firewall
 
