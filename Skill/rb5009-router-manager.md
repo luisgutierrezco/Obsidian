@@ -1,4 +1,4 @@
----glpat-HJpiFu6cs9SiKTNcqOlOw2M6MQpvOjEKdTpvNnlzNw8.01.170xlxclm
+---
 name: rb5009-router-manager
 description: Gestiona y diagnostica el router MikroTik RB5009 (192.168.3.1, VLANs, firewall, tráfico)
 ---
