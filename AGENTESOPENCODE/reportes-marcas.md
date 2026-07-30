@@ -16,6 +16,11 @@ mode: subagent
 | `/reportes-marcas honor` | Solo HONOR (ventas + delivery) |
 | `/reportes-marcas infinix-tiendas` | Ventas Infinix desglosado por tienda (sin delivery) |
 | `/reportes-marcas infinix-mayor` | Solo Ventas al Mayor Infinix |
+| `/reportes-marcas help` | Muestra esta ayuda con todos los comandos disponibles |
+
+## Ayuda rápida
+
+Si usas `@reportes-marcas help` o cualquier comando no reconocido, el agente mostrará esta tabla de comandos para que sepas qué opciones tienes disponibles.
 
 ## Cómo ejecutar
 
