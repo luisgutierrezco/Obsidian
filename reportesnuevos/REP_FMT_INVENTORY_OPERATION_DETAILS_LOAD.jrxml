@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.1.final using JasperReports Library version 6.2.1  -->
+<!-- 2021-10-22T19:21:49 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="REP_FMT_INVENTORY_OPERATION_DETAILS_LOAD" pageWidth="572" pageHeight="752" columnWidth="572" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d8262c89-6f6d-4660-9957-61a90e4f15ba">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="cadm_1018"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="P_MAIN_CORRELATIVE" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_PATTERN_NUMBER" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="P_PATH_REPORTS" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="P_PATTERN_NUMBER_AMOUNT" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+    A.*
+FROM
+REP_FMT_INVENTORY_OPERATION_DETAILS($P{P_MAIN_CORRELATIVE}) A]]>
+	</queryString>
+	<field name="main_correlative" class="java.lang.Integer"/>
+	<field name="line" class="java.lang.Integer"/>
+	<field name="code_product" class="java.lang.String"/>
+	<field name="description_product" class="java.lang.String"/>
+	<field name="referenc" class="java.lang.String"/>
+	<field name="mark" class="java.lang.String"/>
+	<field name="model" class="java.lang.String"/>
+	<field name="amount" class="java.lang.Double"/>
+	<field name="store" class="java.lang.String"/>
+	<field name="store_description" class="java.lang.String"/>
+	<field name="locations" class="java.lang.String"/>
+	<field name="locations_description" class="java.lang.String"/>
+	<field name="destination_store" class="java.lang.String"/>
+	<field name="destination_store_description" class="java.lang.String"/>
+	<field name="destination_location" class="java.lang.String"/>
+	<field name="destination_location_description" class="java.lang.String"/>
+	<field name="unit" class="java.lang.Integer"/>
+	<field name="unit_description" class="java.lang.String"/>
+	<field name="conversion_factor" class="java.lang.Double"/>
+	<field name="unit_type" class="java.lang.Integer"/>
+	<field name="unitary_cost" class="java.lang.Double"/>
+	<field name="buy_tax" class="java.lang.String"/>
+	<field name="aliquot" class="java.lang.Double"/>
+	<field name="total_cost" class="java.lang.Double"/>
+	<field name="total_tax" class="java.lang.Double"/>
+	<field name="total" class="java.lang.Double"/>
+	<field name="load_by_adjustment" class="java.lang.Double"/>
+	<field name="download_by_adjustment" class="java.lang.Double"/>
+	<field name="coin_code" class="java.lang.String"/>
+	<field name="coin_description" class="java.lang.String"/>
+	<field name="serials" class="java.lang.String"/>
+	<field name="lot_number" class="java.lang.String"/>
+	<field name="expire" class="java.lang.Boolean"/>
+	<field name="expire_date" class="java.sql.Date"/>
+	<field name="elaboration_date" class="java.sql.Date"/>
+	<field name="department_code" class="java.lang.String"/>
+	<field name="department_description" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="572" height="1" forecolor="#000000"/>
+				<graphicElement><pen lineWidth="1.0"/></graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="21" width="572" height="1" forecolor="#000000"/>
+				<graphicElement><pen lineWidth="1.0"/></graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="2" width="65" height="18"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CODIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="2" width="260" height="18"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCION DEL PRODUCTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="335" y="2" width="55" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CANT.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="395" y="2" width="60" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="2" width="112" height="18"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPOSITO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="2" width="65" height="16"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{code_product}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="70" y="2" width="260" height="16"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{description_product}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="335" y="2" width="55" height="16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+				<patternExpression><![CDATA[$P{P_PATTERN_NUMBER_AMOUNT}]]></patternExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="395" y="2" width="60" height="16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unit_description}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="460" y="2" width="112" height="16"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{store_description}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="20" width="50" height="12" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[!$F{serials}.equals("")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Seriales:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="50" y="20" width="522" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{serials}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="32" width="572" height="1" forecolor="#E0E0E0"/>
+				<graphicElement><pen lineWidth="0.5"/></graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

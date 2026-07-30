@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.1.final using JasperReports Library version 6.2.1  -->
+<!-- 2026-07-30T14:49:17 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="REP_FMT_INVENTORY_OPERATION_DETAILS_TRANSFER" pageWidth="580" pageHeight="752" columnWidth="580" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="bf525b46-f96c-4213-9d1a-3d2902e8f0b0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="cadm_1018"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="P_MAIN_CORRELATIVE" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_PATTERN_NUMBER" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="P_PATH_REPORTS" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="P_PATTERN_NUMBER_AMOUNT" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+    A.*
+FROM
+REP_FMT_INVENTORY_OPERATION_DETAILS($P{P_MAIN_CORRELATIVE}) A]]>
+	</queryString>
+	<field name="main_correlative" class="java.lang.Integer"/>
+	<field name="line" class="java.lang.Integer"/>
+	<field name="code_product" class="java.lang.String"/>
+	<field name="description_product" class="java.lang.String"/>
+	<field name="referenc" class="java.lang.String"/>
+	<field name="mark" class="java.lang.String"/>
+	<field name="model" class="java.lang.String"/>
+	<field name="amount" class="java.lang.Double"/>
+	<field name="store" class="java.lang.String"/>
+	<field name="store_description" class="java.lang.String"/>
+	<field name="locations" class="java.lang.String"/>
+	<field name="locations_description" class="java.lang.String"/>
+	<field name="destination_store" class="java.lang.String"/>
+	<field name="destination_store_description" class="java.lang.String"/>
+	<field name="destination_location" class="java.lang.String"/>
+	<field name="destination_location_description" class="java.lang.String"/>
+	<field name="unit" class="java.lang.Integer"/>
+	<field name="unit_description" class="java.lang.String"/>
+	<field name="conversion_factor" class="java.lang.Double"/>
+	<field name="unit_type" class="java.lang.Integer"/>
+	<field name="unitary_cost" class="java.lang.Double"/>
+	<field name="buy_tax" class="java.lang.String"/>
+	<field name="aliquot" class="java.lang.Double"/>
+	<field name="total_cost" class="java.lang.Double"/>
+	<field name="total_tax" class="java.lang.Double"/>
+	<field name="total" class="java.lang.Double"/>
+	<field name="load_by_adjustment" class="java.lang.Double"/>
+	<field name="download_by_adjustment" class="java.lang.Double"/>
+	<field name="coin_code" class="java.lang.String"/>
+	<field name="coin_description" class="java.lang.String"/>
+	<field name="serials" class="java.lang.String"/>
+	<field name="lot_number" class="java.lang.String"/>
+	<field name="expire" class="java.lang.Boolean"/>
+	<field name="expire_date" class="java.sql.Date"/>
+	<field name="elaboration_date" class="java.sql.Date"/>
+	<field name="department_code" class="java.lang.String"/>
+	<field name="department_description" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="580" height="1" forecolor="#000000" uuid="99970b57-415e-4c83-a4d3-4a249406798b"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="21" width="580" height="1" forecolor="#000000" uuid="ad2fb4d1-7104-4a6f-b1bc-35f3a5d71826"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="2" width="65" height="18" uuid="f3931237-8f4f-48f7-a3d2-58287da34e82"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CODIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="2" width="260" height="18" uuid="a175dfed-ff9e-4782-88d8-d4056ec12fe0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCION DEL PRODUCTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="351" y="2" width="55" height="18" uuid="f8ada01c-e18d-48b7-8a73-20a525634c05"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CANT.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="2" width="70" height="18" uuid="106b5970-4bbe-4895-a00e-c90eeef9930c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEP. ORIGEN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="493" y="2" width="86" height="18" uuid="c367130f-be48-4142-b1bf-71251b37fd12"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEP. DESTINO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="2" width="87" height="16" uuid="81c19464-86ae-4e74-b2ad-b3c22a15f138">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{code_product}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="89" y="2" width="260" height="16" uuid="3656b74e-f900-4960-81d3-b945ad92e742"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{description_product}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="351" y="2" width="55" height="16" uuid="aaaca643-eff5-41f3-b365-6199e390fced"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+				<patternExpression><![CDATA[$P{P_PATTERN_NUMBER_AMOUNT}]]></patternExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="410" y="2" width="70" height="16" uuid="f3880a27-cb84-4670-9164-c9c1ba823892"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{store_description}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="493" y="2" width="86" height="16" uuid="830f38d9-b0c1-4b88-9956-abba43342b12"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{destination_store_description}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="20" width="50" height="12" isRemoveLineWhenBlank="true" uuid="29529786-3aa4-406f-a360-2a86ded1fd51">
+					<printWhenExpression><![CDATA[!$F{serials}.equals("")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Seriales:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="50" y="20" width="522" height="12" isRemoveLineWhenBlank="true" uuid="c5c5f5e5-6ab6-4f2f-a6d9-06fa2f253c8e"/>
+				<textElement>
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{serials}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="32" width="572" height="1" forecolor="#E0E0E0" uuid="3900c028-e4a4-48cf-8dee-eb96fc3bda0b"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

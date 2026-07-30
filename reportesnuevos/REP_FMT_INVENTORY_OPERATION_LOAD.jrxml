@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.1.final using JasperReports Library version 6.2.1  -->
+<!-- 2024-01-12T11:49:43 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="REP_FMT_INVENTORY_OPERATION_LOAD" 	pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="15" bottomMargin="15" uuid="ee212cf3-990f-48e8-993d-1633310dc7d9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="cadm_1018"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="P_INITIAL_DATE" class="java.util.Date" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Date(0)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_FINAL_DATE" class="java.util.Date" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Date()]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_INITIAL_DOCUMENT" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_FINAL_DOCUMENT" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["ZZZZZZZZZZ"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_USER" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\roberto\\Desktop\\InterData\\InterData\\Reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_PATH_REPORTS" class="java.lang.String"/>
+	<parameter name="P_LIST_DOCUMENTS" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_COMPANY_NAME" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_COMPANY_ID" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_PATTERN_NUMBER" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="P_COMPANY_ADDRESS" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_COMPANY_PHONE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_PATTERN_NUMBER_AMOUNT" class="java.lang.String" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[SELECT
+    K.*
+FROM  REP_FMT_INVENTORY_OPERATION(
+'LOAD',
+$P{P_INITIAL_DATE},
+$P{P_FINAL_DATE},
+$P{P_INITIAL_DOCUMENT},
+$P{P_FINAL_DOCUMENT},
+$P{P_LIST_DOCUMENTS},
+$P{P_USER}) K]]>
+	</queryString>
+	<field name="correlative" class="java.lang.Integer"/>
+	<field name="operation_type" class="java.lang.String"/>
+	<field name="document_no" class="java.lang.String"/>
+	<field name="emission_date" class="java.sql.Date"/>
+	<field name="wait" class="java.lang.Boolean"/>
+	<field name="description" class="java.lang.String"/>
+	<field name="store" class="java.lang.String"/>
+	<field name="store_description" class="java.lang.String"/>
+	<field name="locations" class="java.lang.String"/>
+	<field name="locations_description" class="java.lang.String"/>
+	<field name="destination_store" class="java.lang.String"/>
+	<field name="destination_store_description" class="java.lang.String"/>
+	<field name="destination_location" class="java.lang.String"/>
+	<field name="destination_location_description" class="java.lang.String"/>
+	<field name="total" class="java.lang.Double"/>
+	<field name="operation_comments" class="java.lang.String"/>
+	<field name="begin_used" class="java.lang.Boolean"/>
+	<field name="register_hour" class="java.sql.Time"/>
+	<field name="register_date" class="java.sql.Date"/>
+	<field name="total_net" class="java.lang.Double"/>
+	<field name="total_tax" class="java.lang.Double"/>
+	<field name="user_code" class="java.lang.String"/>
+	<field name="user_description" class="java.lang.String"/>
+	<field name="total_details" class="java.lang.Integer"/>
+	<field name="total_amount" class="java.lang.Double"/>
+	<field name="station" class="java.lang.String"/>
+	<field name="coin_code" class="java.lang.String"/>
+	<field name="coin_description" class="java.lang.String"/>
+	<field name="internal_use" class="java.lang.Boolean"/>
+	<group name="sdf" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{correlative}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="100" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="350" height="22"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_COMPANY_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="22" width="150" height="13" forecolor="#555555"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_COMPANY_ID}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="38" width="572" height="1" forecolor="#000000"/>
+				<graphicElement><pen lineWidth="1.25"/></graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="370" y="0" width="202" height="14" forecolor="#444444"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMPROBANTE DE CARGA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="370" y="14" width="202" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No. " + $F{document_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="44" width="55" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Usuario:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="55" y="44" width="220" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{user_description}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="370" y="44" width="100" height="14"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha Emision:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="472" y="44" width="100" height="14"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emission_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="59" width="55" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Motivo:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="55" y="59" width="250" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="370" y="59" width="100" height="14"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora Registro:]]></text>
+			</staticText>
+			<textField pattern="h:mm a">
+				<reportElement x="472" y="59" width="100" height="14"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{register_hour}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="78" width="572" height="1" forecolor="#888888"/>
+				<graphicElement><pen lineWidth="0.5"/></graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="572" height="28" uuid="dc03b57b-5349-4eb5-9629-1fd4126ff9da"/>
+				<subreportParameter name="P_MAIN_CORRELATIVE">
+					<subreportParameterExpression><![CDATA[$F{correlative}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_PATTERN_NUMBER">
+					<subreportParameterExpression><![CDATA[$P{P_PATTERN_NUMBER}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_PATH_REPORTS">
+					<subreportParameterExpression><![CDATA[$P{P_PATH_REPORTS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="P_PATTERN_NUMBER_AMOUNT">
+					<subreportParameterExpression><![CDATA[$P{P_PATTERN_NUMBER_AMOUNT}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{P_PATH_REPORTS} + "/" + "REP_FMT_INVENTORY_OPERATION_DETAILS_LOAD.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="105" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="50" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Notas:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="45" y="0" width="320" height="40" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{operation_comments}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="380" y="0" width="100" height="14"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Renglones:]]></text>
+			</staticText>
+			<textField pattern="">
+				<reportElement x="482" y="0" width="90" height="14"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_details}]]></textFieldExpression>
+				<patternExpression><![CDATA[$P{P_PATTERN_NUMBER}]]></patternExpression>
+			</textField>
+			<staticText>
+				<reportElement x="380" y="14" width="100" height="14"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Cantidad:]]></text>
+			</staticText>
+			<textField pattern="">
+				<reportElement x="482" y="14" width="90" height="14"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_amount}]]></textFieldExpression>
+				<patternExpression><![CDATA[$P{P_PATTERN_NUMBER_AMOUNT}]]></patternExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="45" width="572" height="1" forecolor="#000000"/>
+				<graphicElement><pen lineWidth="0.75"/></graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="48" width="143" height="14"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Realizado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="48" width="143" height="14"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Verificado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="286" y="48" width="143" height="14"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Entregado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="429" y="48" width="143" height="14"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Recibido]]></text>
+			</staticText>
+			<line>
+				<reportElement x="143" y="45" width="1" height="45" forecolor="#888888"/>
+			</line>
+			<line>
+				<reportElement x="286" y="45" width="1" height="45" forecolor="#888888"/>
+			</line>
+			<line>
+				<reportElement x="429" y="45" width="1" height="45" forecolor="#888888"/>
+			</line>
+			<line>
+				<reportElement x="0" y="92" width="572" height="1" forecolor="#000000"/>
+				<graphicElement><pen lineWidth="0.75"/></graphicElement>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>
