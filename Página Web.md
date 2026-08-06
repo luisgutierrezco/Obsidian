@@ -9,4 +9,4 @@
 
 5- en el resumen de pedidos dentro del panel de los clientes reflejar el delivery y asociar la compra si fue en pago bs visualizar en bs y si fue pagado en moneda dólares mostrar ref.
 
-6- Vincular con sistema Almacen. Para cuando sea zoom vincular ese canal
+6- Vincular con sistema Almacen. Para cuando sea zoom vincular ese canal con el usuario de zoom página web 
