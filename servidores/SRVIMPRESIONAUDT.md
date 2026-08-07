@@ -232,3 +232,11 @@ else {
 | `631` | CUPS | IPP | Impresión por red |
 | `6566` | SANE (saned) | SANE | Escaneo por red |
 | `5353` | mDNS/DNS-SD | UDP | Descubrimiento de impresoras |
+
+---
+
+## 9. Enlaces relacionados
+
+- [[servidores/README|README]] — indice de servidores
+- [[SRVNASOMV]] — NAS y red multi-VLAN
+- [[Soluciones/SolucionesChrystal/README|Soluciones Chrystal]]

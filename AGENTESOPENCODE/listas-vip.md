@@ -82,3 +82,9 @@ El script compila automaticamente el Java si hay cambios y luego genera los PDFs
 - **Tiendas**: `P_INITIAL_STORE=00`, `P_FINAL_STORE=17`
 - **Stock**: Solo productos con stock (`P_SHOW_WITH_STOCK=true`)
 - **Moneda**: Bolivares (codigo `'02'` hardcoded en los reportes)
+
+## Enlaces relacionados
+
+- [[AGENTESOPENCODE/README|Agentes-Indice]] — indice de agentes y skills
+- [[AGENTESOPENCODE/reportes-marcas|reportes-marcas]] — otro agente de reportes
+- [[Soluciones/SolucionesChrystal/README|Soluciones Chrystal]] — fixes del sistema

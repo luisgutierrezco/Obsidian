@@ -353,3 +353,10 @@ Invoke-Command -ComputerName $HostPC -Credential $cred -ScriptBlock {
 4. **Base64** es la forma más confiable de pasar scripts complejos a `Invoke-Command`
 5. **Locale español**: grupos `Administradores`, mensajes en español
 6. **SID de usuario**: necesario para modificar registry Run de otro usuario
+
+
+## Enlaces relacionados
+
+- [[AGENTESOPENCODE/README|Agentes-Indice]] - indice de agentes y skills
+- [[Soluciones/SolucionesChrystal/README|Soluciones Chrystal]]
+

@@ -136,3 +136,9 @@ done
 - [ ] Restringir SSH a 192.168.3.0/24
 - [ ] Crear usuario no-admin para SSH
 - [ ] Habilitar traffic-flow o contadores de firewall para monitoreo por IP
+
+## Enlaces relacionados
+
+- [[AGENTESOPENCODE/README|Agentes-Indice]] — indice de agentes y skills
+- [[servidores/README|Servidores]] — infraestructura conectada
+- [[Soluciones/SolucionesChrystal/README|Soluciones Chrystal]]

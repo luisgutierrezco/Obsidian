@@ -12,9 +12,9 @@ Cada nota documenta un problema real, su causa raiz y su resolucion, para que en
 
 ## Como navegar
 
-- Ver el [[_TAG]] para entender las etiquetas y convenciones.
+- Ver el [[Soluciones/SolucionesChrystal/_TAG|_TAG]] para entender las etiquetas y convenciones.
 - Cada nota es autonoma y se enlaza desde esta tabla.
-- Nueva solucion? -> sigue los pasos de [[_TAG]] y anade aqui una fila.
+- Nueva solucion? -> sigue los pasos de [[Soluciones/SolucionesChrystal/_TAG|_TAG]] y anade aqui una fila.
 
 ## Indice de soluciones
 
@@ -33,5 +33,8 @@ Cada nota documenta un problema real, su causa raiz y su resolucion, para que en
 
 ## Enlaces
 
-- [[_TAG]] — glosario de etiquetas.
+- [[Soluciones/SolucionesChrystal/_TAG|_TAG]] — glosario de etiquetas.
 - [[2026-08-07_recompilar_reports_jasper_620]] — primer fix documentado.
+- [[servidores/README|Servidores]] — infraestructura del sistema
+- [[AGENTESOPENCODE/README|Agentes y Skills]] — agentes de reportes
+- [[reportesnuevos/README|Reportes Crystal]] — reportes redisenados

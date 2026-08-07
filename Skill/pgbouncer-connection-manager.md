@@ -82,3 +82,11 @@ sshpass -p "$PGBOUNCER_SSH_PASS" ssh -o StrictHostKeyChecking=no root@192.168.91
 ```
 PGPASSWORD="$PGPASS" psql -h 192.168.91.131 -p 5432 -U postgres -c '\l+'
 ```
+
+
+## Enlaces relacionados
+
+- [[AGENTESOPENCODE/README|Agentes-Indice]] - indice de agentes y skills
+- [[servidores/README|Servidores]] - infraestructura conectada
+- [[Soluciones/SolucionesChrystal/README|Soluciones Chrystal]]
+

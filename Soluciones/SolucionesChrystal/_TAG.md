@@ -55,5 +55,5 @@ Este archivo define la **taxonomia oficial** de etiquetas de todo el vault. Su p
 4. Commit y push.
 
 ## Enlaces
-- [[README]] — indice de soluciones Chrystal.
+- [[Soluciones/SolucionesChrystal/README|README]] — indice de soluciones Chrystal.
 - [[2026-08-07_recompilar_reports_jasper_620]] — ejemplo de solucion con etiquetas de dominio + FixBug.

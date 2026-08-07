@@ -156,3 +156,11 @@ cat /opt/rustdesk-server/data/id_ed25519.pub
 # Acceder al contenedor
 docker exec -it hbbs /bin/sh
 ```
+
+---
+
+## Enlaces relacionados
+
+- [[servidores/README|README]] — indice de servidores
+- [[SRVNASOMV]] — NAS
+- [[Soluciones/SolucionesChrystal/README|Soluciones Chrystal]]

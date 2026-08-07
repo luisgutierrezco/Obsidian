@@ -14,8 +14,8 @@ severidad: Alta
 estado: Resuelto
 version_afectada: JasperReports 6.2.0 (app) vs 6.2.1 (compilacion)
 enlaces:
-  - "[[README]]"
-  - "[[_TAG]]"
+  - "[[Soluciones/SolucionesChrystal/README|README]]"
+  - "[[Soluciones/SolucionesChrystal/_TAG|_TAG]]"
 ---
 
 # Fix: Error "class not found when loading object from file" al abrir facturas
@@ -95,8 +95,8 @@ Respaldo previo de los `.jasper` antiguos: `PROJECT\Reports\_Backup_Jasper_20260
 - `scripts/CompileAll.java` — helper para recompilar todos los `.jrxml` de una carpeta.
 - `scripts/LoadCheck.java` — verifica que los `.jasper` son cargables con la version objetivo.
 - `scripts/LEEME.txt` — instrucciones de uso.
-- [[README]] — indice de soluciones Chrystal.
-- [[_TAG]] — glosario de etiquetas.
+- [[Soluciones/SolucionesChrystal/README|README]] — indice de soluciones Chrystal.
+- [[Soluciones/SolucionesChrystal/_TAG|_TAG]] — glosario de etiquetas.
 
 ## Etiquetas
 

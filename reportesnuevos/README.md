@@ -163,3 +163,11 @@ java -cp ".;C:\ChrystalUltraPlus2022\lib\*" CompileReports
 - Los márgenes izquierdo/derecho del detalle calzan exactamente con el encabezado
 - Los seriales se muestran en fuente pequeña (7) solo cuando existen
 - Diseño optimizado para ahorro de tinta (líneas finas, sin rectángulos/recuadros)
+
+---
+
+## Enlaces relacionados
+
+- [[Soluciones/SolucionesChrystal/README|Soluciones Chrystal]] — fixes de reportes
+- [[AGENTESOPENCODE/README|Agentes y Skills]] — agentes de reportes
+- [[servidores/README|Servidores]]

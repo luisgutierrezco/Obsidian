@@ -290,3 +290,9 @@ py crear_plantillas.py
 ### Modelos con colores que no se limpian
 - Verificar que el patrón de memoria exista (4/128, 8/256, etc.)
 - Si no hay patron, el modelo queda tal cual (ej: feature phones sin memoria)
+
+## Enlaces relacionados
+
+- [[AGENTESOPENCODE/README|Agentes-Indice]] — indice de agentes y skills
+- [[AGENTESOPENCODE/listas-vip|listas-vip]] — agente de listados de precios
+- [[Soluciones/SolucionesChrystal/README|Soluciones Chrystal]] — fixes del sistema

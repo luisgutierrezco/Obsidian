@@ -638,3 +638,12 @@ Los logs del backup se guardan en:
 | 2026-07-11 | 1.0 | Documentación inicial | Luis Gutiérrez |
 | 2026-07-11 | 1.1 | Sección de backup a Google Drive agregada | Luis Gutiérrez |
 | 2026-07-11 | 1.1 | IP cambiada de DHCP a estática (192.168.90.63/24) | Luis Gutiérrez |
+
+---
+
+## 16. Enlaces relacionados
+
+- [[servidores/README|README]] — indice de servidores
+- [[Soluciones/SolucionesChrystal/README|Soluciones Chrystal]]
+- [[SRVIMPRESIONAUDT]] — servidor de impresion
+- [[rustdesk-server]] — soporte remoto

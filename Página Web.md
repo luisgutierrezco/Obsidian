@@ -20,3 +20,10 @@ area: Pagina web tiendas
 6- Vincular con sistema Almacen. Para cuando sea zoom vincular ese canal con el usuario de zoom página web 
 
 9- Reporte de pedidos de la página nivel de finanzas y control de órdenes. Tipo flujo de caja 
+
+---
+
+## Enlaces relacionados
+
+- [[Soluciones/SolucionesChrystal/README|Soluciones Chrystal]] — sistema de tiendas
+- [[servidores/README|Servidores]] — infraestructura 
