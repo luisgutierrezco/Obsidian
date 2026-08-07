@@ -1,3 +1,11 @@
+---
+tags:
+  - Reportes
+  - Chrystal
+  - DesarrolloTech
+area: Reportes Crystal
+---
+
 # Reportes Crystal Ultra Plus - Diseño Minimalista
 
 ## Resumen de Cambios

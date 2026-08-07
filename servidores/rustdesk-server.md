@@ -1,3 +1,11 @@
+---
+tags:
+  - Servidores
+  - Red
+  - Administracion
+area: Infraestructura
+---
+
 # Servidor Privado RustDesk
 
 ## Información General

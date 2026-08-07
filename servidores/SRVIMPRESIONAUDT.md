@@ -1,3 +1,12 @@
+---
+tags:
+  - Servidores
+  - Impresion
+  - Red
+  - Administracion
+area: Infraestructura
+---
+
 # Documentación del Servidor de Impresión
 
 ## 1. Datos del Servidor

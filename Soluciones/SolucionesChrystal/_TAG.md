@@ -2,56 +2,58 @@
 tags:
   - Documentacion
   - Chrystal
-tema: Taxonomia de etiquetas
+  - Servidores
+tema: Taxonomia global de etiquetas del vault
 ---
 
-# Glosario de etiquetas del vault
+# Glosario global de etiquetas del repo
 
-Este archivo define la taxonomia de etiquetas usada en este vault (especialmente en `Soluciones/SolucionesChrystal`). Sirve para mantener **consistencia** y que Obsidian **conecte automaticamente** notas relacionadas via backlinks.
+Este archivo define la **taxonomia oficial** de etiquetas de todo el vault. Su proposito es que Obsidian **conecte automaticamente** notas relacionadas via backlinks y que se mantenga una convencion consistente.
 
-> Regla: toda solucion nueva DEBE usar las etiquetas de aca y seguir estas convenciones.
+> Regla: toda nota/script/skill DEBE usar estas etiquetas y seguir estas convenciones.
 
-## Etiquetas principales
+## Etiquetas por dominio
 
-| Etiqueta | Que indica | Cuando usarla |
-|----------|-----------|---------------|
-| `#Chrystal` | Toca cualquier parte del sistema **Chrystal Ultra Plus** | Todas las soluciones de esta carpeta |
-| `#FixBug` | Es una solucion a un bug/error | Toda nota de solucion/resolucion |
-| `#JasperReports` | Relacionado a reportes Jasper | Recompilacion, formatos, diseno de reportes |
-| `#Reportes` | Reportes en general | Cualquier nota de reportes |
-| `#Recompilacion` | Se recompilaron recursos (`.jrxml`->`.jasper`) | Compilacion de reportes |
-| `#Windows` | Aplica a equipos SO Windows | Kamando/ejecucion de app |
-| `#Red` / `#Servidor` / `#Router` | Infraestructura | Config de red, servidores, MikroTik |
-| `#Skill` | Es un Skill/agente documentado en el vault | Notas de agentes y skills |
+| Etiqueta | Que indica | Notas/folders donde aplica |
+|----------|-----------|-----------------------------|
+| `#Chrystal` | Sistema **Chrystal Ultra Plus** (POS, reportes, config) | `Soluciones/SolucionesChrystal`, reportes |
+| `#Servidores` | Infraestructura / servidores Linux/Windows | `servidores/` |
+| `#Red` | Red, VLANs, router, MikroTik, habilitaciones | `servidores/`, router RB5009 |
+| `#Impresion` | Impresoras, escaneres, CUPS, IPP | `servidores/SRVIMPRESIONAUDT` |
+| `#Backup` | Copias de seguridad, rclone, cloud | `servidores/SRVNASOMV` |
+| `#DesarrolloTech` | Programacion, scripts, automatizacion, codigo | `scripts/`, `reportesnuevos/` |
+| `#Reportes` | Generacion/recompilacion de reportes | `Soluciones/SolucionesChrystal`, `reportesnuevos/` |
+| `#Agentes` | Agentes y skills de opencode | `AGENTESOPENCODE/`, `Skill/`, `.opencode/agent/` |
+| `#Web` | Pagina web de tiendas | `Pagina Web.md` |
+| `#Administracion` | Admin de usuarios, permisos, tiendas, auditoria | `servidores/SRVNASOMV`, notas de tiendas |
+| `#JasperReports` | Reportes Jasper / recompilacion | `Soluciones/SolucionesChrystal` |
 
-## Etiquetas de estado
+## Etiquetas de estado (solo para soluciones)
 
 | Etiqueta | Uso |
 |----------|-----|
-| `#Resuelto` | Solucion aplicada y verificada |
-| `#EnProgreso` | Investigacion en curso, aun sin resolucion |
-| `#Pendiente` | Detectado pero no resuelto |
-| `#Mediano` / `#Abierto` | (opcional) temas abiertos de mejora |
+| `#FixBug` | Es una solucion a un bug/error |
+| `#Resuelto` / `#EnProgreso` / `#Pendiente` | Estado de una solucion o investigacion |
 
-## Como se conectan las notas
+## Etiquetas de la taxonomia (forma de uso)
 
-1. **Frontmatter `tags:`** — en el bloque YAML de cada nota. Obsidian los indexa y crea backlinks en la vista de "Tags".
-2. **`[[wikilinks]]`** — enlaces manuales entre notas (ej. `[[2026-08-07_recompilar_reports_jasper_620]]`). Conectan la solucion al README, al glosario y a otras notas relacionadas.
-3. **Carpetas** — `Soluciones/SolucionesChrystal/{main}README.md` es el punto de entrada (MOC).
+- **Una nota puede llevar varias etiquetas de dominio** si aplica a varios temas.
+- Combina una de dominio + estado en las soluciones.
+- Las carpetas agrupan por area; las etiquetas + `[[wikilinks]]` conectan entre areas.
+
+## Como conectan las notas
+
+1. **Frontmatter `tags:`** — el bloque YAML de cada nota. Obsidian indexa y crea backlinks.
+2. **`[[wikilinks]]`** — enlaces manuales entre notas (ej. `[[SRVNASOMV]]`). Conectan la nota a su area y a notas relacionadas.
+3. **Carpertas + README (MOC)** — punto de entrada por area.
 
 ## Al crear una nota nueva
 
-1. Crea el archivo en `Soluciones/SolucionesChrystal/` con nombre `AAAA-MM-DD_asunto_breve.md`.
-2. Pon el frontmatter con `tags` (usa las de arriba), `fecha`, `area`, `app`, `estado`.
-3. Enlaza con `[[README]]` en los `enlaces` del frontmatter o en el cuerpo.
-4. Anade una fila en `README.md` (MOC).
-5. Commit y push.
-
-## Etiquetas de la nota actual
-
-`#Chrystal` `#FixBug` `#JasperReports` `#Reportes` `#Recompilacion`
+1. Pon frontmatter con `tags` de dominio (tabla de arriba) + `fecha`, `area`, `estado` si es solucion.
+2. Enlaza con `[[wikilinks]]` a la nota de su area y al indice correspondiente.
+3. Anade una fila en el README/MOC del area.
+4. Commit y push.
 
 ## Enlaces
-
 - [[README]] — indice de soluciones Chrystal.
-- [[2026-08-07_recompilar_reports_jasper_620]] — ejemplo de nota resuelta.
+- [[2026-08-07_recompilar_reports_jasper_620]] — ejemplo de solucion con etiquetas de dominio + FixBug.

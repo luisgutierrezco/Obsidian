@@ -1,6 +1,11 @@
 ---
 name: pgbouncer-connection-manager
 description: Gestiona conexiones de PgBouncer en servidor 192.168.91.131 (ver conexiones por IP, matar sesiones, ajustar MAX_PER_IP, pg_hba.conf)
+tags:
+  - Agentes
+  - Servidores
+  - Red
+  - Administracion
 ---
 
 # PgBouncer Connection Manager

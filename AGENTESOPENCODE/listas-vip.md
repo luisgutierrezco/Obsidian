@@ -1,7 +1,12 @@
 ---
 name: listas-vip
-description: Generates product price listing PDFs for Chrystal Ultra Plus. Handles 4 report variants for DELIVERY and TIENDAS. Use ONLY for price list PDF generation — not for other report tasks.
+description: Generates product price listing PDFs for Chrystal Ultra Plus. Handles 4 report variants for DELIVERY and TIENDAS. Use ONLY for price list PDF generation - not for other report tasks.
 mode: subagent
+tags:
+  - Agentes
+  - Reportes
+  - Chrystal
+  - DesarrolloTech
 ---
 
 # LISTAS_VIP — Generador de Listados de Precios

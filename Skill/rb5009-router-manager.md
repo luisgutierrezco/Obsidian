@@ -1,6 +1,10 @@
 ---
 name: rb5009-router-manager
 description: Gestiona y diagnostica el router MikroTik RB5009 (192.168.3.1, VLANs, firewall, tráfico)
+tags:
+  - Agentes
+  - Red
+  - Servidores
 ---
 
 # RB5009 Router Manager

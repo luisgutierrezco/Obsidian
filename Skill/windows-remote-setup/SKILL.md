@@ -1,6 +1,10 @@
 ---
 name: windows-remote-setup
 description: Administra equipos Windows remotos via WinRM (renombrar PC, crear usuarios, ubicaciones de red, credenciales, accesos directos)
+tags:
+  - Agentes
+  - Administracion
+  - DesarrolloTech
 ---
 
 # Windows Remote Setup

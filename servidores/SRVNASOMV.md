@@ -1,3 +1,12 @@
+---
+tags:
+  - Servidores
+  - Red
+  - Backup
+  - Administracion
+area: Infraestructura
+---
+
 # Documentación del Servidor NAS-OMV
 
 ## 1. Datos Generales

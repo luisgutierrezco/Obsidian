@@ -2,6 +2,10 @@
 name: reportes-marcas
 description: "Agente especializado en generar reportes de marcas (Samsung, Infinix, HONOR). Limpia, clasifica, agrupa y genera inventarios y ventas."
 mode: subagent
+tags:
+  - Agentes
+  - Reportes
+  - DesarrolloTech
 ---
 
 # REPORTES_MARCAS — Generador de Reportes por Marca
