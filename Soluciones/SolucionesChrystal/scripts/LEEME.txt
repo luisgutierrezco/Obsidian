@@ -1,0 +1,34 @@
+# Scripts reutilizables - Recompilacion de reportes Jasper Chrystal
+
+Estos helpers permiten recompilar los reportes `.jrxml` -> `.jasper` con la **misma version**
+de JasperReports que usa la app Chrystal, y verificar que quedan cargables.
+
+## Requisitos
+
+- Java 8 JRE (no necesita `javac`; se usa el compilador ECJ de la carpeta `lib` de la app).
+- Classpath de la app: `C:\ChrystalUltraPlus2022\lib` (incluye `jasperreports-6.2.0.jar`).
+
+## Compilar los helpers (ECJ solo soporta hasta Java 1.7)
+
+$cp = "C:\ChrystalUltraPlus2022\lib\*"   # o el classpath completo de la app
+java -Xmx512m -cp "$cp" org.eclipse.jdt.internal.compiler.batch.Main ^
+     -source 1.7 -target 1.7 -proc:none -d out CompileAll.java LoadCheck.java
+
+## 1) Recompilar todos los reportes de una carpeta
+
+java -Xmx1024m -cp "$cp;out" CompileAll "C:\ruta\a\Reports"
+
+-> escribe CompileAll... usa `-source 1.7`. Salida: "OK" por cada reporte y
+   "RESULTADO: N de M compilados correctamente".
+
+## 2) Verificar que los .jasper son cargables con la version objetivo
+
+java -Xmx1024m -cp "$cp;out" LoadCheck "C:\ruta\a\Reports"
+
+-> "RESULTADO CARGA: N de M .jasper cargables". Simula lo que hace la app al deserializar.
+
+## Reglas de oro
+- SIEMPRE respaldar los `.jasper` existentes antes de sobrescribir.
+- Recompilar con la MISMA version de JasperReports que usa la app (ver config.ini y MANIFEST).
+- ECJ 4.3.1 => usar `-source 1.7 -target 1.7` y sin lambdas en el codigo.
+- La carpeta de reportes que usa la app sale de `config.ini` (parametro REPORTS=...).
