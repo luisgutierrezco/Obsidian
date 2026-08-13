@@ -48,6 +48,23 @@ Guardadas en `/opt/docker-stacks/nextcloud/.env` (chmod 600):
 4. Tipo: **Almacenamiento local** → Ruta: `/mnt/nas` → activa para los usuarios/`admin` → **Guardar**.
 5. (La carpeta ya está visible para el sistema; el plugin solo la expone en la interfaz de archivos.)
 
+## Control de acceso: bloqueo de eliminación en BANCO_DE_IMAGENES
+
+> Objetivo: los usuarios de los grupos **Cashea** (`casheaonline`) y **Web** (`website`) pueden ver/subir/editar en `/BANCO_DE_IMAGENES` (storage externo → NAS) pero **no pueden eliminar** archivos. `admin` conserva todos los permisos.
+
+- **App:** File Access Control (`files_accesscontrol` **5.0.0**) — funciona como operación del Workflow Engine (no tiene página propia; vive en la sección **Configuración → Flujo**).
+- **2 reglas creadas** en scope admin (tablas `oc_flow_operations` + `oc_flow_operations_scope`):
+
+| ID | Regla | Grupo | Operación |
+|---|---|---|---|
+| 1 | Bloquear eliminar en BANCO_DE_IMAGENES (Cashea) | `Cashea` | `{"permissions":23}` |
+| 2 | Bloquear eliminar en BANCO_DE_IMAGENES (Web) | `Web` | `{"permissions":23}` |
+
+- **Checks por regla:** `UserGroupMembership` (`is` grupo) **+** `RequestURL` (`matches` `/BANCO_DE_IMAGENES/`).
+- **`{"permissions":23}`** = `PERMISSION_ALL(31) − DELETE(8)`: permite leer/crear/actualizar pero **deniega eliminar** (se usa en lugar de `deny`, que bloquearía todo).
+- **Prueba funcional (2026-08-13):** usuario temporal `test_probe` (grupo Cashea) — listar 207, crear 201, leer 200, **eliminar 403**, archivo intacto; **admin**: eliminar 204 ✓, archivo desaparece. Usuario de prueba eliminado después.
+- Si se edita una regla desde la WebUI, el formulario guarda `deny` (bloquea todo); para el comportamiento "solo eliminar" hay que conservar `{"permissions":23}` (o recrear vía consola).
+
 ## Notas
 
 - Docker (`/var/lib/docker`) **y containerd** reubicados al disco de datos (`.../docker/`) vía `daemon.json` + `config.toml` — no llenan `/`.
@@ -60,6 +77,7 @@ Guardadas en `/opt/docker-stacks/nextcloud/.env` (chmod 600):
 | Fecha | Versión | Cambio | Autor |
 |---|---|---|---|
 | 2026-08-13 | 1.0 | Despliegue de Nextcloud 34.0.2 (Docker Compose) en NAS-OMV | Luis Gutiérrez |
+| 2026-08-13 | 1.1 | File Access Control: bloqueo de eliminación en BANCO_DE_IMAGENES para grupos Cashea y Web (verificado) | Luis Gutiérrez |
 
 ## Enlaces relacionados
 
