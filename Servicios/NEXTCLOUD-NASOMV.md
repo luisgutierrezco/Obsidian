@@ -13,13 +13,16 @@ area: Infraestructura
 
 ## Desplegado y operativo
 
-**URL de acceso:** http://192.168.90.63:8080
+**URLs de acceso:**
+- **Pública (Cloudflare Tunnel):** https://nextcloud.vipphoneoficial.com
+- **LAN:** http://192.168.90.63:8080
 
 | Servicio | Estado | Puerto |
 |---|---|---|
 | nextcloud-app (Nextcloud **34.0.2** + PHP 8.5) | Up | 8080→80 |
 | nextcloud-db (MariaDB 10.6) | Up (healthy) | interno |
 | nextcloud-redis (Redis alpine) | Up (healthy) | interno |
+| nextcloud-cloudflared (Cloudflare Tunnel) | Up | salida 7844/443 (QUIC) |
 
 ## Ruta del NAS mapeada en Nextcloud
 
@@ -65,6 +68,22 @@ Guardadas en `/opt/docker-stacks/nextcloud/.env` (chmod 600):
 - **Prueba funcional (2026-08-13):** usuario temporal `test_probe` (grupo Cashea) — listar 207, crear 201, leer 200, **eliminar 403**, archivo intacto; **admin**: eliminar 204 ✓, archivo desaparece. Usuario de prueba eliminado después.
 - Si se edita una regla desde la WebUI, el formulario guarda `deny` (bloquea todo); para el comportamiento "solo eliminar" hay que conservar `{"permissions":23}` (o recrear vía consola).
 
+## Túnel Cloudflare (acceso público HTTPS)
+
+> Publicado en **https://nextcloud.vipphoneoficial.com** mediante Cloudflare Tunnel (Zero Trust) — sin abrir puertos en el NAS ni exponer su IP.
+
+- **Conector:** servicio `nextcloud-cloudflared` (imagen `cloudflare/cloudflared:latest`) en el mismo stack/red `nextcloud_net` del compose; `command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}`.
+- **Token del túnel** guardado únicamente en `/opt/docker-stacks/nextcloud/.env` (chmod 600) como `CLOUDFLARE_TUNNEL_TOKEN` — **no** en el compose ni en git.
+- **Dashboard Cloudflare:** túnel `c0478e83-71b5-4f94-907a-250742440870`; hostname público `nextcloud.vipphoneoficial.com` → Service **HTTP** → `http://nextcloud-app:80` (resolución interna por red Docker).
+- **Config Nextcloud** (`config.php` vía `occ config:system:set`):
+  - `trusted_domains` += `nextcloud.vipphoneoficial.com`
+  - `overwritehost` = `nextcloud.vipphoneoficial.com`
+  - `overwriteprotocol` = `https`
+  - `overwrite.cli.url` = `https://nextcloud.vipphoneoficial.com`
+- **Verificado (2026-08-14):** HTTPS 302 → login; `/status.php` responde por el túnel; WebDAV PROPFIND con `admin` por el dominio público **200** (listado incluye `BANCO_DE_IMAGENES/`); acceso LAN `192.168.90.63:8080` intacto.
+- **Límite Cloudflare gratis:** subidas **≤ 100 MB** por petición vía web. Para archivos mayores conviene la red LAN o plan pago.
+- **2FA disponible:** `twofactor_totp` 16.0.0 + `twofactor_backupcodes` activos (**compatibles con Google Authenticator**). Activación manual por usuario en **Avatar → Seguridad → Autenticación de dos factores → TOTP** (no forzada).
+
 ## Notas
 
 - Docker (`/var/lib/docker`) **y containerd** reubicados al disco de datos (`.../docker/`) vía `daemon.json` + `config.toml` — no llenan `/`.
@@ -78,6 +97,7 @@ Guardadas en `/opt/docker-stacks/nextcloud/.env` (chmod 600):
 |---|---|---|---|
 | 2026-08-13 | 1.0 | Despliegue de Nextcloud 34.0.2 (Docker Compose) en NAS-OMV | Luis Gutiérrez |
 | 2026-08-13 | 1.1 | File Access Control: bloqueo de eliminación en BANCO_DE_IMAGENES para grupos Cashea y Web (verificado) | Luis Gutiérrez |
+| 2026-08-14 | 1.2 | Cloudflare Tunnel: acceso público HTTPS (nextcloud.vipphoneoficial.com) + 2FA TOTP (Google Authenticator) disponible | Luis Gutiérrez |
 
 ## Enlaces relacionados
 
